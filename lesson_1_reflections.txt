@@ -17,7 +17,10 @@ git config --global color.ui auto 																- wlaczanie kolorowego prezeen
 git diff f19cb1b80fe27e938e4d72770ca0a42f25e99ecc b0678b161fcf74467ed3a63110557e3d6229cfa6		- porównanie dwóch wersji
 git checkout b0678b161fcf74467ed3a63110557e3d6229cfa6											- ściąganie konkretnej wersji (<>Checkout w svn)
 git config --global core.editor																	- ustawianie domyślnego edytora
-
+git init																						- inicjalizuje nowe repozyotrium
+git add "nazwa pliku"																			- dodaje plik "nazwa pliku" do staging area
+git commit -m "Commit message" 																	- zapisuje staging area do repozytorium 
+																								z komentarzem "Commit message" 
 6. How might using version control make you more confident to make changes that could break something?
 You can always identify and reverse the damage!
 7. Now that you have your workspace set up, what do you want to try using Git for?
