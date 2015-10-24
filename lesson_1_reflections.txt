@@ -51,4 +51,4 @@ git remote add origin https://github.com/rafi80/reflections.git				- dodaje zdal
 git ls-remote																- wyświetla adresy zapisanych zdalnych repo
 git remote -v																- wyświetla adresy zapisanych zdalnych repo ze szczegółami
 git push origin master														- wysyła do zdalnego repo origin branch master
-
+git pull origin master														- sciaga aktualizacje ze zdalnego repo origin do lokalnego brancha master
