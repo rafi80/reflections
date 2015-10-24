@@ -52,3 +52,6 @@ git ls-remote																- wyświetla adresy zapisanych zdalnych repo
 git remote -v																- wyświetla adresy zapisanych zdalnych repo ze szczegółami
 git push origin master														- wysyła do zdalnego repo origin branch master
 git pull origin master														- sciaga aktualizacje ze zdalnego repo origin do lokalnego brancha master
+git fetch origin															- aktualizacja lokalnego brancha origin/master o zmiany z serwera lokalnego
+
+Mechanizm pulla: git pull origin master = 1. git fetch origin 2. git merge master origin/master
