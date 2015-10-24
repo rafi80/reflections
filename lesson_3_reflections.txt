@@ -6,3 +6,5 @@ To preserve control on the changes beeing made.
 Forks is a feature of GitHub - it happends on GitHub
 Clones - are working remote to local or local to local
 Branches - are operations on a some repo - they create new paths from some current branch
+4. What is the benefit of having a copy of the last known state of the remote stored locally?
+We can work continously on a branch. We don't have to merge.
