@@ -67,3 +67,4 @@ Mergowanie do brancha ze zmianą.
 	(git push origin nowybranch, dodajemy komentarz na githubie przy pull request, żeby merdzujacy wiedzial, ze cos zrobilismy)
 5. czekamy na merdza naszego pull requesta na zdalnym repo albo sami merdzujemy na zdalnym repo do mastera z pull requesta.
 	click click na githubie (wybieramy brancha nowy branch, wybieramy pull requesta, "Merge pull request")
+
