@@ -55,3 +55,15 @@ git pull origin master														- sciaga aktualizacje ze zdalnego repo origi
 git fetch origin															- aktualizacja lokalnego brancha origin/master o zmiany z serwera lokalnego
 
 Mechanizm pulla: git pull origin master = 1. git fetch origin 2. git merge master origin/master
+
+Mergowanie do brancha ze zmianą.
+1. wrpowadzamy swoje zmiany na lokalnym branchu 
+	(git branch nowybranch, git add zmieniony plik, git commit)
+2. Pullujemy mastera z wprowadzona zmiana ze zdalenego repo 
+	(git checkout master, git pull origin master)
+3. merdzujemy ja do naszego lokalnego brancha
+(	git checkout nowybranch, git merge master nowybranch, <rozwiazujemy konflikt>, git add zmieniony plik, git commit, git log)
+4. commitujemy brancha na zdalne repo 
+	(git push origin nowybranch, dodajemy komentarz na githubie przy pull request, żeby merdzujacy wiedzial, ze cos zrobilismy)
+5. czekamy na merdza naszego pull requesta na zdalnym repo albo sami merdzujemy na zdalnym repo do mastera z pull requesta.
+	click click na githubie (wybieramy brancha nowy branch, wybieramy pull requesta, "Merge pull request")
