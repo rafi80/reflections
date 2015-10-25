@@ -9,62 +9,81 @@ Pros: a logical structure, changes can be easy understood, couple of devs can wo
 Cons: It's time consuming, it's attention consuming
 4. Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others,
  like Google Docs, treat each file separately?
-Ones where developed for civil users, highlighting simplicity while others highlight versatility and software engineering needs
+Ones where developed for civil users, highlighting simplicity while others highlight versatility and software 
+engineering needs
 5. How can you use the commands git log and git diff to view the history of files?
 git clone 																	- ściąganie repozytorium
 git log 																	- log
-git config --global color.ui auto 											- wlaczanie kolorowego prezeentowania zmian
+git config --global color.ui auto 											- wlaczanie kolorowego prezeentowania
+																			zmian
 git diff f19cb1b80fe27e938e b0678b161fcf74467ed6							- porównanie dwóch wersji
-git checkout b0678b161fcf74467ed3a63110557e3d6229cfa6						- ściąganie konkretnej wersji (<>Checkout w svn)
+git checkout b0678b161fcf74467ed3a63110557e3d6229cfa6						- ściąganie konkretnej wersji 
+																			(<>Checkout w svn)
 git config --global core.editor												- ustawianie domyślnego edytora
 git init																	- inicjalizuje nowe repozyotrium
-git add nazwa_pliku															- dodaje plik nazwa_pliku do staging area
+git add nazwa_pliku															- dodaje plik nazwa_pliku do staging
+																			area
 git commit -m "Commit message" 												- zapisuje staging area do repozytorium 
      																		z komentarzem "Commit message" 
-git diff																	- pokazuje różnice pomiędzy working directory 
-																			i staging area
+git diff																	- pokazuje różnice pomiędzy working 
+																			directory i staging area
 git diff --staged															- pokazuje różnice pomiędzy staging area a 
 																			ostatnim commitem w repo
-git reset --hard															- wycofuje wszystkie zmiany z working directory 
-																			i stage area
+git reset --hard															- wycofuje wszystkie zmiany z working 
+																			directory i stage area
 6. How might using version control make you more confident to make changes that could break something?
 You can always identify and reverse the damage!
 7. Now that you have your workspace set up, what do you want to try using Git for?
 For my Nanodegree Android Course
 8. Branchowanie
-git branch nazwa_brancha													- tworzy nowego brancha o nazwie nazwa_brancha
+git clone repo															    - clonuje (tworzy) zdalne repo lokalnie
+git remote add origin https://github.com/user/repo.git						- dodaje zdalne repo o nazwie origin z 
+																			adresu https://github.com/user/repo.git 
+																			do aktualnego clone'a
+git branch nazwa_brancha													- tworzy nowego brancha o nazwie 
+																			nazwa_brancha
 git log --graph (--oneline)	branch1 branch2									- pokazuje graph commitów dwóch branchy
 																			--oneline w sposób zwięzły
-git checkout -b nazwa_nowego_brancha  										- tworzy nowego brancha o nazwie nazwa_nowego_brancha
-																			i robi na nim checkout
-git gc																		- uruchamia garbage collectora git. Kasuje sieroty.
+git checkout -b nazwa_nowego_brancha  										- tworzy nowego brancha o nazwie 
+																			nazwa_nowego_brancha i robi na nim checkout
+git gc																		- uruchamia garbage collectora git. Kasuje 
+																			sieroty.
 git merge branch1 branch2													- merguje branch2 into branch1
-git clean -f -n																- pokazuje, które nieśledzone pliki zostaną usunięte
+git clean -f -n																- pokazuje, które nieśledzone pliki zostaną
+																			usunięte
 git clean -f																- kasuje nieśledzone pliki
-git show idcommitu															- pokazuje zmiany pomiedzy commitem idcommitu a jego 
-																			oryginalnym  rodzicem
+git show idcommitu															- pokazuje zmiany pomiedzy commitem 
+																			idcommitu a jego oryginalnym  rodzicem
 git branch -d nazwa_brancha													- usuwa brancha o nazwie nazwa_brancha
 9. Github
-git config --global credential.helper wincred								- zapisywanie lokalnie credentials do GitHub
-git remote add origin https://github.com/rafi80/reflections.git				- dodaje zdalne repozytorium o nazwie origin i 
-																			podanym adresie
+git config --global credential.helper wincred								- zapisywanie lokalnie credentials do
+																			GitHub
+git remote add origin https://github.com/rafi80/reflections.git				- dodaje zdalne repozytorium o nazwie
+																			origin i podanym adresie
 git ls-remote																- wyświetla adresy zapisanych zdalnych repo
-git remote -v																- wyświetla adresy zapisanych zdalnych repo ze szczegółami
-git push origin master														- wysyła do zdalnego repo origin branch master
-git pull origin master														- sciaga aktualizacje ze zdalnego repo origin do lokalnego brancha master
-git fetch origin															- aktualizacja lokalnego brancha origin/master o zmiany z serwera lokalnego
+git remote -v																- wyświetla adresy zapisanych zdalnych repo
+																			ze szczegółami
+git push origin master														- wysyła do zdalnego repo origin branch 
+																			master
+git pull origin master														- sciaga aktualizacje ze zdalnego repo
+																			origin do lokalnego brancha master
+git fetch origin															- aktualizacja lokalnego brancha 
+																			origin/master o zmiany z serwera lokalnego
 
 Mechanizm pulla: git pull origin master = 1. git fetch origin 2. git merge master origin/master
 
 Mergowanie do brancha ze zmianą.
 1. wrpowadzamy swoje zmiany na lokalnym branchu 
-	(git branch nowybranch, git add zmieniony plik, git commit)
+(git branch nowybranch, git add zmieniony plik, git commit)
 2. Pullujemy mastera z wprowadzona zmiana ze zdalenego repo 
-	(git checkout master, git pull origin master)
+(git checkout master, git pull origin master)
 3. merdzujemy ja do naszego lokalnego brancha
-(	git checkout nowybranch, git merge master nowybranch, <rozwiazujemy konflikt>, git add zmieniony plik, git commit, git log)
+(git checkout nowybranch, git merge master nowybranch, <rozwiazujemy konflikt>, git add zmieniony plik, git commit,
+git log)
 4. commitujemy brancha na zdalne repo 
-	(git push origin nowybranch, dodajemy komentarz na githubie przy pull request, żeby merdzujacy wiedzial, ze cos zrobilismy)
-5. czekamy na merdza naszego pull requesta na zdalnym repo albo sami merdzujemy na zdalnym repo do mastera z pull requesta.
-	click click na githubie (wybieramy brancha nowy branch, wybieramy pull requesta, "Merge pull request")
+(git push origin nowybranch, dodajemy komentarz na githubie przy pull request, żeby merdzujacy wiedzial,
+ ze cos zrobilismy)
+5. czekamy na merdza naszego pull requesta na zdalnym repo albo sami merdzujemy na zdalnym repo do mastera z pull 
+requesta.
+click click na githubie (wybieramy brancha nowy branch, wybieramy pull requesta, "Merge pull request")
 
